@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <style>
+       
+        h1 {
+            background-color: rgba(182, 75, 146, 0.8);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 3em;
+			font-family:verdana;
+            border-radius: 10px;
+            text-align: center;
+        }
+		body {
+            background-image: url('cloud.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+         }
+        
+		.container {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container img {
+            border-radius: 10px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-style: italic;
+            color: #b64b92;
+            margin: 20px 0;
+        }
+		 <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 700px;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 3em;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
+        .dots {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Memories</h1>
+
+<div class="slider">
+    <div class="slides">
+        <img src="birthday.jpg" alt="Image 1">
+        <img src="adik.jpg" alt="Image 2">
+    </div>
+
+    <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+    <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+</div>
+
+<div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+   
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(n) {
+        slideIndex += n;
+        if (slideIndex < 0) {
+            slideIndex = dots.length - 1;
+        }
+        if (slideIndex >= dots.length) {
+            slideIndex = 0;
+        }
+        slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+        updateDots();
+    }
+
+    function moveSlide(n) {
+        showSlide(n);
+    }
+
+    function currentSlide(n) {
+        slideIndex = n - 1;
+        showSlide(1);
+    }
+
+    function updateDots() {
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[slideIndex].classList.add('active');
+    }
+
+    // Auto slide
+    setInterval(() => {
+        moveSlide(1);
+    }, 3000); // Change slide every 3 seconds
+</script>
+
+</body>
+</html>  
+        <center><p>Every child eagerly looks forward to school holidays, and my younger cousin is no exception.</p></center>
+        <center><p>Our family always plans exciting vacations during the holidays.</p></center>
+        <center><p>We love going on adventures and spending time playing together whenever we have the chance.</p></center>
+
+        <center><h2>"Spending time together was a beautiful memory for me and my family."</h2></center>
+    </div>
+	<footer>
+    <em><p>&copy; 2024 SYAFIQAH. All rights reserved.</p></em>
+</footer>
+
+</body>
+</html>
